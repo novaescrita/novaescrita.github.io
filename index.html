@@ -32,17 +32,26 @@
     .hero {
       background: linear-gradient(135deg, #002147, #003366);
       color: white;
-      text-align: center;
       padding: 80px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 40px;
+      flex-wrap: wrap;
     }
-    .hero h1 {
+    .hero img {
+      max-height: 140px;
+    }
+    .hero-text {
+      text-align: left;
+      max-width: 600px;
+    }
+    .hero-text h1 {
       font-size: 48px;
       margin-bottom: 10px;
     }
-    .hero p {
+    .hero-text p {
       font-size: 20px;
-      max-width: 600px;
-      margin: 0 auto;
     }
     .about {
       padding: 60px 20px;
@@ -81,8 +90,11 @@
     </nav>
   </header>
   <section class="hero">
-    <h1>28 Anos de Excelência</h1>
-    <p>Oferecendo soluções contábeis com profissionalismo, transparência e dedicação para o crescimento do seu negócio.</p>
+    <img src="28anos.png" alt="28 Anos">
+    <div class="hero-text">
+      <h1>28 Anos de Excelência</h1>
+      <p>Oferecendo soluções contábeis com profissionalismo, transparência e dedicação para o crescimento do seu negócio.</p>
+    </div>
   </section>
   <section class="about" id="sobre">
     <h2>Quem Somos</h2>
