@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Nova Escrita Contabilidade</title>
+  <script src="https://unpkg.com/lucide@latest"></script>
   <style>
     body {
       margin: 0;
@@ -18,7 +19,7 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      flex-wrap: wrap;
+      flex-wrap: nowrap;
       box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     }
     .logo img {
@@ -27,6 +28,8 @@
     nav {
       display: flex;
       gap: 15px;
+      flex-direction: row;
+      align-items: center;
     }
     nav a {
       color: #002147;
@@ -35,15 +38,12 @@
     }
     .menu-toggle {
       display: none;
-      flex-direction: column;
       cursor: pointer;
     }
-    .menu-toggle span {
-      height: 3px;
-      width: 25px;
-      background: #002147;
-      margin: 4px 0;
-      transition: 0.4s;
+    .menu-toggle svg {
+      color: #002147;
+      width: 28px;
+      height: 28px;
     }
     .hero {
       background: linear-gradient(135deg, #002147, #003366);
@@ -83,16 +83,19 @@
       font-size: 16px;
     }
     footer {
-      background-color: #002147;
-      color: white;
-      text-align: center;
-      padding: 20px;
-      font-size: 14px;
-    }
+  background-color: #002147;
+  color: white;
+  padding: 20px;
+  font-size: 14px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  flex-direction: column;
+}
     .highlight {
       color: #c9a335;
     }
-
     @media (max-width: 768px) {
       nav {
         display: none;
@@ -100,16 +103,19 @@
         width: 100%;
         background-color: white;
         margin-top: 10px;
+        padding: 10px 0;
       }
       nav.active {
         display: flex;
       }
       .menu-toggle {
-        display: flex;
+        display: block;
+        margin-left: auto;
       }
       header {
-        flex-direction: column;
-        align-items: flex-start;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
       }
     }
   </style>
@@ -120,15 +126,13 @@
       <img src="logo.png" alt="Nova Escrita Contabilidade">
     </div>
     <div class="menu-toggle" onclick="toggleMenu()">
-      <span></span>
-      <span></span>
-      <span></span>
+      <i data-lucide="menu" id="menu-icon"></i>
     </div>
-    <nav id="menu">
-      <a href="#sobre">Sobre</a>
-      <a href="#servicos">Serviços</a>
-      <a href="#contato">Contato</a>
-    </nav>
+    <nav id="menu" >
+  <a href="#sobre">Sobre</a>
+  <a href="#servicos">Serviços</a>
+  <a href="#contato">Contato</a>
+</nav>
   </header>
   <section class="hero">
     <img src="28anos.png" alt="28 Anos">
@@ -142,15 +146,50 @@
     <p>Com mais de duas décadas de experiência, a <strong>Nova Escrita Contabilidade</strong> atua com comprometimento em oferecer serviços contábeis de alta qualidade para empresas de diversos segmentos.</p>
   </section>
   <footer>
-    <p>Rua Antonio Blanco, 599 - Vila Costa do Sol, São Carlos - SP, 13566-020 | (16) 3411-1781 | @novaescritacontabilidade</p>
-  </footer>
-
+  <p>Rua Antonio Blanco, 599 - Vila Costa do Sol, São Carlos - SP, 13566-020 | (16) 3411-1781 |
+    <a href="https://www.instagram.com/novaescritacontabilidade" target="_blank" style="margin-left: 10px; color: white; text-decoration: none; display: inline-flex; align-items: baseline;">
+      <i data-lucide="instagram" style="margin-right: 5px; position: relative; top: 2px;"></i>novaescritacontabilidade
+    </a>
+  </p>
+</footer>
+</footer>
   <script>
-    function toggleMenu() {
-      const menu = document.getElementById('menu');
-      menu.classList.toggle('active');
+  function toggleMenu() {
+    const menu = document.getElementById('menu');
+    const icon = document.getElementById('menu-icon');
+    menu.classList.toggle('active');
+    icon.setAttribute('data-lucide', menu.classList.contains('active') ? 'x' : 'menu');
+    lucide.createIcons();
+  }
+
+  // Fechar menu ao clicar fora dele (mobile apenas)
+  document.addEventListener('click', function (event) {
+    const menu = document.getElementById('menu');
+    const toggle = document.querySelector('.menu-toggle');
+    const icon = document.getElementById('menu-icon');
+    const isMobile = window.innerWidth <= 768;
+    if (isMobile && !menu.contains(event.target) && !toggle.contains(event.target)) {
+      menu.classList.remove('active');
+      icon.setAttribute('data-lucide', 'menu');
+      lucide.createIcons();
     }
-  </script>
+  });
+
+  // Rolar suavemente até o destino ao clicar em links
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      e.preventDefault();
+      const target = document.querySelector(this.getAttribute('href'));
+      if (target) {
+        window.scrollTo({
+          top: target.offsetTop - 60,
+          behavior: 'smooth'
+        });
+      }
+    });
+  });
+
+  lucide.createIcons();
+</script>
 </body>
 </html>
-
