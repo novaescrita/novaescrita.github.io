@@ -73,6 +73,22 @@
     .about h2 {
       color: #002147;
       font-size: 28px;
+      margin-bottom: 30px;
+    }
+    .link-table {
+      margin: 0 auto;
+      border-collapse: collapse;
+      font-size: 16px;
+    }
+    .link-table td {
+      padding: 4px 8px;
+      vertical-align: middle;
+    }
+    .link-table i {
+      color: #002147;
+    }
+    .link-table tr.spacer {
+      height: 20px;
     }
     footer {
       background-color: #002147;
@@ -128,39 +144,51 @@
   <section class="hero">
     <div class="hero-text">
       <h1>Links Úteis</h1>
-      <p>Acesse plataformas e ferramentas essenciais para sua rotina contábil.</p>
+      <p>Acesse serviços públicos e ferramentas importantes.</p>
     </div>
   </section>
 
   <section class="about">
     <h2>Plataformas e Acessos</h2>
-    <table style="margin: 0 auto; border-collapse: collapse;">
+    <table class="link-table">
       <tr>
-        <td style="padding-right: 10px; vertical-align: middle;">
-          <i data-lucide="globe" style="color: #002147; position: relative; top: 2px;"></i>
-        </td>
-        <td style="text-align: left;"><a href="https://www.gov.br/" target="_blank" style="color: #002147; text-decoration: none;">Portal Gov.br</a></td>
+        <td><i data-lucide="globe"></i></td>
+        <td style="text-align: left;"><a href="https://www.gov.br/pt-br" target="_blank" style="color: #002147; text-decoration: none;">Gov.br</a></td>
+        <td style="width: 50px;"></td>
+        <td><i data-lucide="building"></i></td>
+        <td style="text-align: left;"><a href="https://www.gov.br/receitafederal" target="_blank" style="color: #002147; text-decoration: none;">Receita Federal</a></td>
       </tr>
-      <tr style="height: 0.5cm;"><td colspan="2"></td></tr>
+      <tr class="spacer"></tr>
       <tr>
-        <td style="padding-right: 10px; vertical-align: middle;">
-          <i data-lucide="file-text" style="color: #002147; position: relative; top: 2px;"></i>
-        </td>
-        <td style="text-align: left;"><a href="https://www.nfe.fazenda.gov.br/" target="_blank" style="color: #002147; text-decoration: none;">Nota Fiscal Eletrônica</a></td>
+        <td><i data-lucide="briefcase"></i></td>
+        <td style="text-align: left;"><a href="https://www.jucesp.sp.gov.br" target="_blank" style="color: #002147; text-decoration: none;">Jucesp - Junta Comercial</a></td>
+        <td></td>
+        <td><i data-lucide="file-text"></i></td>
+        <td style="text-align: left;"><a href="https://www.nfe.fazenda.gov.br" target="_blank" style="color: #002147; text-decoration: none;">Nota Fiscal Eletrônica</a></td>
       </tr>
-      <tr style="height: 0.5cm;"><td colspan="2"></td></tr>
+      <tr class="spacer"></tr>
       <tr>
-        <td style="padding-right: 10px; vertical-align: middle;">
-          <i data-lucide="building" style="color: #002147; position: relative; top: 2px;"></i>
-        </td>
-        <td style="text-align: left;"><a href="https://www.receita.fazenda.gov.br/" target="_blank" style="color: #002147; text-decoration: none;">Receita Federal</a></td>
+        <td><i data-lucide="printer"></i></td>
+        <td style="text-align: left;"><a href="https://scarlos.giap.com.br/ords/scarlos02/f?p=1600:70" target="_blank" style="color: #002147; text-decoration: none;">Emissão NFe São Carlos</a></td>
+        <td></td>
+        <td><i data-lucide="link"></i></td>
+        <td style="text-align: left;"><a href="http://www.saocarlos.sp.gov.br/index.php/servicos-de-a-a-z-sim-online.html" target="_blank" style="color: #002147; text-decoration: none;">SIM Online São Carlos</a></td>
       </tr>
-      <tr style="height: 0.5cm;"><td colspan="2"></td></tr>
+      <tr class="spacer"></tr>
       <tr>
-        <td style="padding-right: 10px; vertical-align: middle;">
-          <i data-lucide="briefcase" style="color: #002147; position: relative; top: 2px;"></i>
-        </td>
-        <td style="text-align: left;"><a href="https://www.jucesp.sp.gov.br/" target="_blank" style="color: #002147; text-decoration: none;">Jucesp</a></td>
+        <td><i data-lucide="badge-check"></i></td>
+        <td style="text-align: left;"><a href="https://solucoes.receita.fazenda.gov.br/servicos/certidaointernet/pj/emitir" target="_blank" style="color: #002147; text-decoration: none;">Certidão Negativa Receita Federal</a></td>
+        <td></td>
+        <td><i data-lucide="shield-check"></i></td>
+        <td style="text-align: left;"><a href="https://consulta-crf.caixa.gov.br/" target="_blank" style="color: #002147; text-decoration: none;">Certidão CRF - Caixa</a></td>
+      </tr>
+      <tr class="spacer"></tr>
+      <tr>
+        <td><i data-lucide="alert-octagon"></i></td>
+        <td style="text-align: left;"><a href="https://www10.fazenda.sp.gov.br/CertidaoNegativaDeb/Pages/EmissaoCertidaoNegativa.aspx" target="_blank" style="color: #002147; text-decoration: none;">Certidão Negativa - Fazenda SP</a></td>
+        <td></td>
+        <td><i data-lucide="file-lock"></i></td>
+        <td style="text-align: left;"><a href="https://cndt-certidao.tst.jus.br/inicio.faces" target="_blank" style="color: #002147; text-decoration: none;">CNDT - Justiça do Trabalho</a></td>
       </tr>
     </table>
   </section>
