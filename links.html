@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Links Úteis - Nova Escrita Contabilidade</title>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #f8f9fa;
+      color: #333;
+    }
+    header {
+      background-color: white;
+      color: #002147;
+      padding: 10px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: nowrap;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+    .logo img {
+      height: 50px;
+    }
+    nav {
+      display: flex;
+      gap: 15px;
+      flex-direction: row;
+      align-items: center;
+    }
+    nav a {
+      color: #002147;
+      text-decoration: none;
+      font-weight: 500;
+    }
+    .menu-toggle {
+      display: none;
+      cursor: pointer;
+    }
+    .menu-toggle svg {
+      color: #002147;
+      width: 28px;
+      height: 28px;
+    }
+    .hero {
+      background: linear-gradient(135deg, #002147, #003366);
+      color: white;
+      padding: 60px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 30px;
+      flex-wrap: wrap;
+    }
+    .hero-text {
+      text-align: center;
+      max-width: 600px;
+    }
+    .hero-text h1 {
+      font-size: 32px;
+      margin-bottom: 10px;
+    }
+    .hero-text p {
+      font-size: 18px;
+    }
+    .about {
+      padding: 40px 20px;
+      text-align: center;
+    }
+    .about h2 {
+      color: #002147;
+      font-size: 28px;
+    }
+    footer {
+      background-color: #002147;
+      color: white;
+      padding: 20px;
+      font-size: 14px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      flex-direction: column;
+    }
+    @media (max-width: 768px) {
+      nav {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: white;
+        margin-top: 10px;
+        padding: 10px 0;
+      }
+      nav.active {
+        display: flex;
+      }
+      .menu-toggle {
+        display: block;
+        margin-left: auto;
+      }
+      header {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <img src="logo.png" alt="Nova Escrita Contabilidade">
+    </div>
+    <div class="menu-toggle" onclick="toggleMenu()">
+      <i data-lucide="menu" id="menu-icon"></i>
+    </div>
+    <nav id="menu">
+      <a href="index.html">Início</a>
+      <a href="servicos.html">Serviços</a>
+      <a href="links.html">Links Úteis</a>
+      <a href="contato.html">Contato</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="hero-text">
+      <h1>Links Úteis</h1>
+      <p>Acesse plataformas e ferramentas essenciais para sua rotina contábil.</p>
+    </div>
+  </section>
+
+  <section class="about">
+    <h2>Plataformas e Acessos</h2>
+    <table style="margin: 0 auto; border-collapse: collapse;">
+      <tr>
+        <td style="padding-right: 10px; vertical-align: middle;">
+          <i data-lucide="globe" style="color: #002147; position: relative; top: 2px;"></i>
+        </td>
+        <td style="text-align: left;"><a href="https://www.gov.br/" target="_blank" style="color: #002147; text-decoration: none;">Portal Gov.br</a></td>
+      </tr>
+      <tr style="height: 0.5cm;"><td colspan="2"></td></tr>
+      <tr>
+        <td style="padding-right: 10px; vertical-align: middle;">
+          <i data-lucide="file-text" style="color: #002147; position: relative; top: 2px;"></i>
+        </td>
+        <td style="text-align: left;"><a href="https://www.nfe.fazenda.gov.br/" target="_blank" style="color: #002147; text-decoration: none;">Nota Fiscal Eletrônica</a></td>
+      </tr>
+      <tr style="height: 0.5cm;"><td colspan="2"></td></tr>
+      <tr>
+        <td style="padding-right: 10px; vertical-align: middle;">
+          <i data-lucide="building" style="color: #002147; position: relative; top: 2px;"></i>
+        </td>
+        <td style="text-align: left;"><a href="https://www.receita.fazenda.gov.br/" target="_blank" style="color: #002147; text-decoration: none;">Receita Federal</a></td>
+      </tr>
+      <tr style="height: 0.5cm;"><td colspan="2"></td></tr>
+      <tr>
+        <td style="padding-right: 10px; vertical-align: middle;">
+          <i data-lucide="briefcase" style="color: #002147; position: relative; top: 2px;"></i>
+        </td>
+        <td style="text-align: left;"><a href="https://www.jucesp.sp.gov.br/" target="_blank" style="color: #002147; text-decoration: none;">Jucesp</a></td>
+      </tr>
+    </table>
+  </section>
+
+  <footer>
+    <p>Rua Antonio Blanco, 599 - Vila Costa do Sol, São Carlos - SP, 13566-020</p>
+    <p>
+      <span style="color: white; display: inline-flex; align-items: baseline;">
+        <i data-lucide="phone" style="margin: 0 5px 0 0; position: relative; top: 2px;"></i>(16) 3411-1781
+      </span> |
+      <a href="http://wa.me/5516997619641" target="_blank" style="color: white; text-decoration: none; display: inline-flex; align-items: baseline;">
+        <i data-lucide="message-circle" style="margin: 0 5px 0 10px; position: relative; top: 2px;"></i>Whatsapp
+      </a> |
+      <a href="https://www.instagram.com/novaescritacontabilidade" target="_blank" style="color: white; text-decoration: none; display: inline-flex; align-items: baseline;">
+        <i data-lucide="instagram" style="margin: 0 5px 0 10px; position: relative; top: 2px;"></i>novaescritacontabilidade
+      </a> |
+      <a href="https://waze.com/ul?ll=-22.00242210%2C-47.88524790&navigate=yes" target="_blank" style="color: white; text-decoration: none; display: inline-flex; align-items: baseline;">
+        <i data-lucide="map-pin" style="margin: 0 5px 0 10px; position: relative; top: 2px;"></i>Waze
+      </a> |
+      <a href="https://www.google.com/maps?q=-22.00242210,-47.88524790" target="_blank" style="color: white; text-decoration: none; display: inline-flex; align-items: baseline;">
+        <i data-lucide="map-pin" style="margin: 0 5px 0 10px; position: relative; top: 2px;"></i>Google Maps
+      </a>
+    </p>
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById('menu');
+      const icon = document.getElementById('menu-icon');
+      menu.classList.toggle('active');
+      icon.setAttribute('data-lucide', menu.classList.contains('active') ? 'x' : 'menu');
+      lucide.createIcons();
+    }
+    document.addEventListener('click', function (event) {
+      const menu = document.getElementById('menu');
+      const toggle = document.querySelector('.menu-toggle');
+      const icon = document.getElementById('menu-icon');
+      const isMobile = window.innerWidth <= 768;
+      if (isMobile && !menu.contains(event.target) && !toggle.contains(event.target)) {
+        menu.classList.remove('active');
+        icon.setAttribute('data-lucide', 'menu');
+        lucide.createIcons();
+      }
+    });
+    lucide.createIcons();
+  </script>
+</body>
+</html>
