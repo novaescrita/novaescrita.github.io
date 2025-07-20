@@ -21,6 +21,10 @@
       justify-content: space-between;
       flex-wrap: nowrap;
       box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      position: relative;
+    }
+    .logo {
+      flex: 1;
     }
     .logo img {
       height: 50px;
@@ -38,18 +42,20 @@
     }
     .menu-toggle {
       cursor: pointer;
-      width: 44px;
-      height: 44px;
+      width: 36px;
+      height: 36px;
       display: none;
       align-items: center;
       justify-content: center;
-      position: relative;
+      position: absolute;
+      right: 20px;
       z-index: 2;
       border: 1px solid #ccc;
       border-radius: 6px;
       background-color: #fff;
     }
-    .menu-toggle i {
+    .menu-toggle i,
+    .menu-toggle svg {
       pointer-events: none;
     }
     .hero {
@@ -133,7 +139,7 @@
       <img src="logo.png" alt="Nova Escrita Contabilidade">
     </div>
     <button class="menu-toggle" onclick="toggleMenu()" aria-label="Abrir menu">
-      <svg id="menu-icon" xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#002147" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+      <i id="menu-icon" data-lucide="menu"></i>
     </button>
     <nav id="menu">
       <a href="index.html">Início</a>
@@ -155,42 +161,42 @@
     <table class="link-table">
       <tr>
         <td><i data-lucide="globe"></i></td>
-        <td><a href="https://www.gov.br/pt-br" target="_blank" style="color: #002147; text-decoration: none;">Gov.br</a></td>
+        <td><a href="https://www.gov.br/pt-br" target="_blank" style="color:#002147; text-decoration:none;">Gov.br</a></td>
         <td style="width: 50px;"></td>
         <td><i data-lucide="building"></i></td>
-        <td><a href="https://www.gov.br/receitafederal" target="_blank" style="color: #002147; text-decoration: none;">Receita Federal</a></td>
+        <td><a href="https://www.gov.br/receitafederal" target="_blank" style="color:#002147; text-decoration:none;">Receita Federal</a></td>
       </tr>
       <tr class="spacer"></tr>
       <tr>
         <td><i data-lucide="briefcase"></i></td>
-        <td><a href="https://www.jucesp.sp.gov.br" target="_blank" style="color: #002147; text-decoration: none;">Jucesp - Junta Comercial</a></td>
+        <td><a href="https://www.jucesp.sp.gov.br" target="_blank" style="color:#002147; text-decoration:none;">Jucesp - Junta Comercial</a></td>
         <td></td>
         <td><i data-lucide="file-text"></i></td>
-        <td><a href="https://www.nfe.fazenda.gov.br" target="_blank" style="color: #002147; text-decoration: none;">Nota Fiscal Eletrônica</a></td>
+        <td><a href="https://www.nfe.fazenda.gov.br" target="_blank" style="color:#002147; text-decoration:none;">Nota Fiscal Eletrônica</a></td>
       </tr>
       <tr class="spacer"></tr>
       <tr>
         <td><i data-lucide="printer"></i></td>
-        <td><a href="https://scarlos.giap.com.br/ords/scarlos02/f?p=1600:70" target="_blank" style="color: #002147; text-decoration: none;">Emissão NFe São Carlos</a></td>
+        <td><a href="https://scarlos.giap.com.br/ords/scarlos02/f?p=1600:70" target="_blank" style="color:#002147; text-decoration:none;">Emissão NFe São Carlos</a></td>
         <td></td>
         <td><i data-lucide="link"></i></td>
-        <td><a href="http://www.saocarlos.sp.gov.br/index.php/servicos-de-a-a-z-sim-online.html" target="_blank" style="color: #002147; text-decoration: none;">SIM Online São Carlos</a></td>
+        <td><a href="http://www.saocarlos.sp.gov.br/index.php/servicos-de-a-a-z-sim-online.html" target="_blank" style="color:#002147; text-decoration:none;">SIM Online São Carlos</a></td>
       </tr>
       <tr class="spacer"></tr>
       <tr>
         <td><i data-lucide="badge-check"></i></td>
-        <td><a href="https://solucoes.receita.fazenda.gov.br/servicos/certidaointernet/pj/emitir" target="_blank" style="color: #002147; text-decoration: none;">Certidão Negativa Receita Federal</a></td>
+        <td><a href="https://solucoes.receita.fazenda.gov.br/servicos/certidaointernet/pj/emitir" target="_blank" style="color:#002147; text-decoration:none;">Certidão Negativa Receita Federal</a></td>
         <td></td>
         <td><i data-lucide="shield-check"></i></td>
-        <td><a href="https://consulta-crf.caixa.gov.br/" target="_blank" style="color: #002147; text-decoration: none;">Certidão CRF - Caixa</a></td>
+        <td><a href="https://consulta-crf.caixa.gov.br/" target="_blank" style="color:#002147; text-decoration:none;">Certidão CRF - Caixa</a></td>
       </tr>
       <tr class="spacer"></tr>
       <tr>
         <td><i data-lucide="alert-octagon"></i></td>
-        <td><a href="https://www10.fazenda.sp.gov.br/CertidaoNegativaDeb/Pages/EmissaoCertidaoNegativa.aspx" target="_blank" style="color: #002147; text-decoration: none;">Certidão Negativa - Fazenda SP</a></td>
+        <td><a href="https://www10.fazenda.sp.gov.br/CertidaoNegativaDeb/Pages/EmissaoCertidaoNegativa.aspx" target="_blank" style="color:#002147; text-decoration:none;">Certidão Negativa - Fazenda SP</a></td>
         <td></td>
         <td><i data-lucide="file-lock"></i></td>
-        <td><a href="https://cndt-certidao.tst.jus.br/inicio.faces" target="_blank" style="color: #002147; text-decoration: none;">CNDT - Justiça do Trabalho</a></td>
+        <td><a href="https://cndt-certidao.tst.jus.br/inicio.faces" target="_blank" style="color:#002147; text-decoration:none;">CNDT - Justiça do Trabalho</a></td>
       </tr>
     </table>
   </section>
@@ -220,15 +226,20 @@
     function toggleMenu() {
       const menu = document.getElementById('menu');
       const icon = document.getElementById('menu-icon');
-      menu.classList.toggle('active');
+      const isActive = menu.classList.toggle('active');
+      icon.setAttribute('data-lucide', isActive ? 'x' : 'menu');
+      lucide.createIcons();
     }
 
     document.addEventListener('click', function (event) {
       const menu = document.getElementById('menu');
       const toggle = document.querySelector('.menu-toggle');
+      const icon = document.getElementById('menu-icon');
       const isMobile = window.innerWidth <= 768;
       if (isMobile && !menu.contains(event.target) && !toggle.contains(event.target)) {
         menu.classList.remove('active');
+        icon.setAttribute('data-lucide', 'menu');
+        lucide.createIcons();
       }
     });
     lucide.createIcons();
