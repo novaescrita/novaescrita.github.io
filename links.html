@@ -37,18 +37,19 @@
       font-weight: 500;
     }
     .menu-toggle {
-      display: none;
       cursor: pointer;
-      width: 32px;
-      height: 32px;
+      width: 44px;
+      height: 44px;
+      display: none;
       align-items: center;
       justify-content: center;
+      position: relative;
+      z-index: 2;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      background-color: #fff;
     }
-    .menu-toggle svg,
     .menu-toggle i {
-      color: #002147;
-      width: 28px;
-      height: 28px;
       pointer-events: none;
     }
     .hero {
@@ -123,11 +124,6 @@
       .menu-toggle {
         display: flex;
       }
-      header {
-        flex-direction: row;
-        align-items: center;
-        justify-content: space-between;
-      }
     }
   </style>
 </head>
@@ -136,9 +132,9 @@
     <div class="logo">
       <img src="logo.png" alt="Nova Escrita Contabilidade">
     </div>
-    <div class="menu-toggle" onclick="toggleMenu()">
-      <i data-lucide="menu" id="menu-icon"></i>
-    </div>
+    <button class="menu-toggle" onclick="toggleMenu()" aria-label="Abrir menu">
+      <svg id="menu-icon" xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#002147" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+    </button>
     <nav id="menu">
       <a href="index.html">Início</a>
       <a href="servicos.html">Serviços</a>
@@ -225,25 +221,17 @@
       const menu = document.getElementById('menu');
       const icon = document.getElementById('menu-icon');
       menu.classList.toggle('active');
-      icon.setAttribute('data-lucide', menu.classList.contains('active') ? 'x' : 'menu');
-      lucide.createIcons();
     }
 
     document.addEventListener('click', function (event) {
       const menu = document.getElementById('menu');
       const toggle = document.querySelector('.menu-toggle');
-      const icon = document.getElementById('menu-icon');
       const isMobile = window.innerWidth <= 768;
       if (isMobile && !menu.contains(event.target) && !toggle.contains(event.target)) {
         menu.classList.remove('active');
-        icon.setAttribute('data-lucide', 'menu');
-        lucide.createIcons();
       }
     });
-
-    document.addEventListener("DOMContentLoaded", function () {
-      lucide.createIcons();
-    });
+    lucide.createIcons();
   </script>
 </body>
 </html>
