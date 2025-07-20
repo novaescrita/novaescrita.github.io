@@ -32,7 +32,6 @@
     nav.desktop-menu {
       display: flex;
       gap: 15px;
-      flex-direction: row;
       align-items: center;
     }
     nav.desktop-menu a {
@@ -86,6 +85,8 @@
       text-align: center;
       transform: translateY(100%);
       transition: transform 0.8s ease;
+      border-top-left-radius: 16px;
+      border-top-right-radius: 16px;
     }
     .mobile-menu.active {
       display: flex;
@@ -141,9 +142,6 @@
     .link-table i {
       color: #002147;
     }
-    .link-table tr.spacer {
-      height: 20px;
-    }
     footer {
       background-color: #002147;
       color: white;
@@ -154,6 +152,17 @@
       align-items: center;
       text-align: center;
       flex-direction: column;
+    }
+    .icon-inline {
+      margin: 0 5px 0 10px;
+      position: relative;
+      top: 2px;
+    }
+    .icon-link {
+      color: white;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: baseline;
     }
     @media (max-width: 768px) {
       nav.desktop-menu {
@@ -212,7 +221,7 @@
         <td><i data-lucide="building"></i></td>
         <td><a href="https://www.gov.br/receitafederal" target="_blank">Receita Federal</a></td>
       </tr>
-      <tr class="spacer"></tr>
+      <tr><td colspan="5" style="height: 20px;"></td></tr>
       <tr>
         <td><i data-lucide="briefcase"></i></td>
         <td><a href="https://www.jucesp.sp.gov.br" target="_blank">Jucesp - Junta Comercial</a></td>
@@ -220,7 +229,7 @@
         <td><i data-lucide="file-text"></i></td>
         <td><a href="https://www.nfe.fazenda.gov.br" target="_blank">Nota Fiscal Eletrônica</a></td>
       </tr>
-      <tr class="spacer"></tr>
+      <tr><td colspan="5" style="height: 20px;"></td></tr>
       <tr>
         <td><i data-lucide="printer"></i></td>
         <td><a href="https://scarlos.giap.com.br/ords/scarlos02/f?p=1600:70" target="_blank">Emissão NFe São Carlos</a></td>
@@ -228,7 +237,7 @@
         <td><i data-lucide="link"></i></td>
         <td><a href="http://www.saocarlos.sp.gov.br/index.php/servicos-de-a-a-z-sim-online.html" target="_blank">SIM Online São Carlos</a></td>
       </tr>
-      <tr class="spacer"></tr>
+      <tr><td colspan="5" style="height: 20px;"></td></tr>
       <tr>
         <td><i data-lucide="badge-check"></i></td>
         <td><a href="https://solucoes.receita.fazenda.gov.br/servicos/certidaointernet/pj/emitir" target="_blank">Certidão Negativa Receita Federal</a></td>
@@ -236,7 +245,7 @@
         <td><i data-lucide="shield-check"></i></td>
         <td><a href="https://consulta-crf.caixa.gov.br/" target="_blank">Certidão CRF - Caixa</a></td>
       </tr>
-      <tr class="spacer"></tr>
+      <tr><td colspan="5" style="height: 20px;"></td></tr>
       <tr>
         <td><i data-lucide="alert-octagon"></i></td>
         <td><a href="https://www10.fazenda.sp.gov.br/CertidaoNegativaDeb/Pages/EmissaoCertidaoNegativa.aspx" target="_blank">Certidão Negativa - Fazenda SP</a></td>
@@ -250,20 +259,20 @@
   <footer>
     <p>Rua Antonio Blanco, 599 - Vila Costa do Sol, São Carlos - SP, 13566-020</p>
     <p>
-      <span style="color: white; display: inline-flex; align-items: baseline;">
-        <i data-lucide="phone" style="margin: 0 5px 0 0; position: relative; top: 2px;"></i>(16) 3411-1781
+      <span class="icon-link">
+        <i data-lucide="phone" class="icon-inline"></i>(16) 3411-1781
       </span> |
-      <a href="http://wa.me/5516997619641" target="_blank" style="color: white; text-decoration: none; display: inline-flex; align-items: baseline;">
-        <i data-lucide="message-circle" style="margin: 0 5px 0 10px; position: relative; top: 2px;"></i>Whatsapp
+      <a href="http://wa.me/5516997619641" target="_blank" class="icon-link">
+        <i data-lucide="message-circle" class="icon-inline"></i>Whatsapp
       </a> |
-      <a href="https://www.instagram.com/novaescritacontabilidade" target="_blank" style="color: white; text-decoration: none; display: inline-flex; align-items: baseline;">
-        <i data-lucide="instagram" style="margin: 0 5px 0 10px; position: relative; top: 2px;"></i>novaescritacontabilidade
+      <a href="https://www.instagram.com/novaescritacontabilidade" target="_blank" class="icon-link">
+        <i data-lucide="instagram" class="icon-inline"></i>novaescritacontabilidade
       </a> |
-      <a href="https://waze.com/ul?ll=-22.00242210%2C-47.88524790&navigate=yes" target="_blank" style="color: white; text-decoration: none; display: inline-flex; align-items: baseline;">
-        <i data-lucide="map-pin" style="margin: 0 5px 0 10px; position: relative; top: 2px;"></i>Waze
+      <a href="https://waze.com/ul?ll=-22.00242210%2C-47.88524790&navigate=yes" target="_blank" class="icon-link">
+        <i data-lucide="map-pin" class="icon-inline"></i>Waze
       </a> |
-      <a href="https://www.google.com/maps?q=-22.00242210,-47.88524790" target="_blank" style="color: white; text-decoration: none; display: inline-flex; align-items: baseline;">
-        <i data-lucide="map-pin" style="margin: 0 5px 0 10px; position: relative; top: 2px;"></i>Google Maps
+      <a href="https://www.google.com/maps?q=-22.00242210,-47.88524790" target="_blank" class="icon-link">
+        <i data-lucide="map-pin" class="icon-inline"></i>Google Maps
       </a>
     </p>
   </footer>
