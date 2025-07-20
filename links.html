@@ -1,182 +1,41 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Links Úteis - Nova Escrita Contabilidade</title>
   <script src="https://unpkg.com/lucide@latest"></script>
   <style>
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: #f8f9fa;
-      color: #333;
-    }
-    header {
-      background-color: white;
-      color: #002147;
-      padding: 10px 20px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-      position: relative;
-      z-index: 10;
-    }
-    .logo {
-      flex: 1;
-    }
-    .logo img {
-      height: 50px;
-    }
-    nav.desktop-menu {
-      display: flex;
-      gap: 15px;
-      align-items: center;
-    }
-    nav.desktop-menu a {
-      color: #002147;
-      text-decoration: none;
-      font-weight: 500;
-    }
-    .menu-toggle {
-      cursor: pointer;
-      width: 36px;
-      height: 36px;
-      display: none;
-      align-items: center;
-      justify-content: center;
-      position: absolute;
-      right: 20px;
-      z-index: 11;
-      border: 1px solid #ccc;
-      border-radius: 6px;
-      background-color: #fff;
-    }
-    .menu-toggle i,
-    .menu-toggle svg {
-      pointer-events: none;
-    }
-    .mobile-overlay {
-      display: none;
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      backdrop-filter: blur(6px);
-      background-color: rgba(0, 0, 0, 0.3);
-      z-index: 4;
-    }
-    .mobile-overlay.active {
-      display: block;
-    }
-    .mobile-menu {
-      display: none;
-      flex-direction: column;
-      position: fixed;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      background-color: #002147;
-      box-shadow: 0 -2px 6px rgba(0, 0, 0, 0.15);
-      z-index: 5;
-      padding: 20px;
-      text-align: center;
-      transform: translateY(100%);
-      transition: transform 0.8s ease;
-      border-top-left-radius: 16px;
-      border-top-right-radius: 16px;
-    }
-    .mobile-menu.active {
-      display: flex;
-      transform: translateY(0);
-    }
-    .mobile-menu a {
-      color: white;
-      text-decoration: none;
-      padding: 10px 0;
-      font-size: 18px;
-      text-transform: uppercase;
-    }
-    .hero {
-      background: linear-gradient(135deg, #002147, #003366);
-      color: white;
-      padding: 60px 20px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 30px;
-      flex-wrap: wrap;
-    }
-    .hero-text {
-      text-align: center;
-      max-width: 600px;
-    }
-    .hero-text h1 {
-      font-size: 32px;
-      margin-bottom: 10px;
-    }
-    .hero-text p {
-      font-size: 18px;
-    }
-    .about {
-      padding: 40px 20px;
-      text-align: center;
-    }
-    .about h2 {
-      color: #002147;
-      font-size: 28px;
-      margin-bottom: 30px;
-    }
-    .link-table {
-      margin: 0 auto;
-      border-collapse: collapse;
-      font-size: 16px;
-    }
-    .link-table td {
-      padding: 4px 8px;
-      vertical-align: middle;
-      text-align: left;
-    }
-    .link-table i {
-      color: #002147;
-    }
-    footer {
-      background-color: #002147;
-      color: white;
-      padding: 20px;
-      font-size: 14px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      flex-direction: column;
-    }
-    .icon-inline {
-      margin: 0 5px 0 10px;
-      position: relative;
-      top: 2px;
-    }
-    .icon-link {
-      color: white;
-      text-decoration: none;
-      display: inline-flex;
-      align-items: baseline;
-    }
+    body { margin: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #f8f9fa; color: #333; }
+    header, footer { background: #002147; color: white; padding: 20px; text-align: center; }
+    header { background: white; color: #002147; display: flex; align-items: center; justify-content: space-between; box-shadow: 0 2px 4px rgba(0,0,0,0.1); position: relative; z-index: 10; }
+    .logo img { height: 50px; }
+    nav.desktop-menu, .mobile-menu a { display: flex; gap: 15px; align-items: center; text-transform: uppercase; }
+    nav.desktop-menu a, .mobile-menu a { color: #002147; text-decoration: none; font-weight: 500; padding: 6px 12px; display: inline-flex; align-items: center; justify-content: center; transition: 0.3s; }
+    nav.desktop-menu a:hover { background: #002147; color: white; }
+    .menu-toggle { display: none; width: 36px; height: 36px; align-items: center; justify-content: center; position: absolute; right: 20px; z-index: 11; border: 1px solid #ccc; border-radius: 6px; background: #fff; cursor: pointer; }
+    .mobile-overlay { display: none; position: fixed; inset: 0; backdrop-filter: blur(6px); background: rgba(0,0,0,0.3); z-index: 4; }
+    .mobile-overlay.active { display: block; }
+    .mobile-menu { display: none; flex-direction: column; position: fixed; bottom: 0; left: 0; width: 100%; background: #002147; padding: 20px; text-align: center; transform: translateY(100%); transition: transform 0.8s ease; border-radius: 16px 16px 0 0; z-index: 5; }
+    .mobile-menu a { color: white !important; font-size: 18px; padding: 10px 0; }
+    .mobile-menu.active { display: flex; transform: translateY(0); }
+    .hero { background: linear-gradient(135deg, #002147, #003366); color: white; padding: 60px 20px; text-align: center; }
+    .hero h1 { font-size: 32px; margin-bottom: 10px; }
+    .hero p { font-size: 18px; }
+    .about { padding: 40px 20px; text-align: center; }
+    .about h2 { color: #002147; font-size: 28px; margin-bottom: 30px; }
+    .link-table { margin: 0 auto; border-collapse: collapse; font-size: 16px; }
+    .link-table td { padding: 4px 8px; vertical-align: middle; text-align: left; }
+    .link-table i { color: #002147; margin-right: 5px; }
+    .icon-inline { margin: 0 5px 0 10px; position: relative; top: 2px; }
+    .icon-link { color: white; text-decoration: none; display: inline-flex; align-items: baseline; }
+    footer p { margin: 5px 0; }
     @media (max-width: 768px) {
-      nav.desktop-menu {
-        display: none;
-      }
-      .menu-toggle {
-        display: flex;
-      }
+      nav.desktop-menu { display: none; }
+      .menu-toggle { display: flex; }
     }
     @media (min-width: 769px) {
-      .mobile-menu,
-      .mobile-overlay {
-        display: none !important;
-      }
+      .menu-toggle, .mobile-menu, .mobile-overlay { display: none !important; }
     }
   </style>
 </head>
@@ -184,13 +43,13 @@
   <div id="mobile-overlay" class="mobile-overlay" onclick="toggleMobileMenu()"></div>
   <header>
     <div class="logo">
-      <img src="logo.png" alt="Nova Escrita Contabilidade">
+      <img src="logo.png" alt="Nova Escrita Contabilidade" />
     </div>
     <nav class="desktop-menu">
-      <a href="index.html">Início</a>
-      <a href="servicos.html">Serviços</a>
-      <a href="links.html">Links Úteis</a>
-      <a href="contato.html">Contato</a>
+      <a href="index.html"><i data-lucide="home" class="icon-inline"></i> HOME</a>
+      <a href="servicos.html"><i data-lucide="briefcase" class="icon-inline"></i> SERVIÇOS</a>
+      <a href="links.html"><i data-lucide="link" class="icon-inline"></i> LINKS ÚTEIS</a>
+      <a href="contato.html"><i data-lucide="mail" class="icon-inline"></i> CONTATO</a>
     </nav>
     <button class="menu-toggle" onclick="toggleMobileMenu()" aria-label="Abrir menu">
       <i id="menu-icon" data-lucide="menu"></i>
@@ -198,10 +57,10 @@
   </header>
 
   <div id="mobile-menu" class="mobile-menu">
-    <a href="index.html">Início</a>
-    <a href="servicos.html">Serviços</a>
-    <a href="links.html">Links Úteis</a>
-    <a href="contato.html">Contato</a>
+    <a href="index.html"><i data-lucide="home"></i> HOME</a>
+    <a href="servicos.html"><i data-lucide="briefcase"></i> SERVIÇOS</a>
+    <a href="links.html"><i data-lucide="link"></i> LINKS ÚTEIS</a>
+    <a href="contato.html"><i data-lucide="mail"></i> CONTATO</a>
   </div>
 
   <section class="hero">
@@ -214,77 +73,37 @@
   <section class="about">
     <h2>Plataformas e Acessos</h2>
     <table class="link-table">
-      <tr>
-        <td><i data-lucide="globe"></i></td>
-        <td><a href="https://www.gov.br/pt-br" target="_blank">Gov.br</a></td>
-        <td style="width: 50px;"></td>
-        <td><i data-lucide="building"></i></td>
-        <td><a href="https://www.gov.br/receitafederal" target="_blank">Receita Federal</a></td>
-      </tr>
+      <tr><td><i data-lucide="globe"></i></td><td><a href="https://www.gov.br/pt-br" target="_blank">Gov.br</a></td><td></td><td><i data-lucide="building"></i></td><td><a href="https://www.gov.br/receitafederal" target="_blank">Receita Federal</a></td></tr>
       <tr><td colspan="5" style="height: 20px;"></td></tr>
-      <tr>
-        <td><i data-lucide="briefcase"></i></td>
-        <td><a href="https://www.jucesp.sp.gov.br" target="_blank">Jucesp - Junta Comercial</a></td>
-        <td></td>
-        <td><i data-lucide="file-text"></i></td>
-        <td><a href="https://www.nfe.fazenda.gov.br" target="_blank">Nota Fiscal Eletrônica</a></td>
-      </tr>
+      <tr><td><i data-lucide="briefcase"></i></td><td><a href="https://www.jucesp.sp.gov.br" target="_blank">Jucesp - Junta Comercial</a></td><td></td><td><i data-lucide="file-text"></i></td><td><a href="https://www.nfe.fazenda.gov.br" target="_blank">Nota Fiscal Eletrônica</a></td></tr>
       <tr><td colspan="5" style="height: 20px;"></td></tr>
-      <tr>
-        <td><i data-lucide="printer"></i></td>
-        <td><a href="https://scarlos.giap.com.br/ords/scarlos02/f?p=1600:70" target="_blank">Emissão NFe São Carlos</a></td>
-        <td></td>
-        <td><i data-lucide="link"></i></td>
-        <td><a href="http://www.saocarlos.sp.gov.br/index.php/servicos-de-a-a-z-sim-online.html" target="_blank">SIM Online São Carlos</a></td>
-      </tr>
+      <tr><td><i data-lucide="printer"></i></td><td><a href="https://scarlos.giap.com.br/ords/scarlos02/f?p=1600:70" target="_blank">Emissão NFe São Carlos</a></td><td></td><td><i data-lucide="link"></i></td><td><a href="http://www.saocarlos.sp.gov.br/index.php/servicos-de-a-a-z-sim-online.html" target="_blank">SIM Online São Carlos</a></td></tr>
       <tr><td colspan="5" style="height: 20px;"></td></tr>
-      <tr>
-        <td><i data-lucide="badge-check"></i></td>
-        <td><a href="https://solucoes.receita.fazenda.gov.br/servicos/certidaointernet/pj/emitir" target="_blank">Certidão Negativa Receita Federal</a></td>
-        <td></td>
-        <td><i data-lucide="shield-check"></i></td>
-        <td><a href="https://consulta-crf.caixa.gov.br/" target="_blank">Certidão CRF - Caixa</a></td>
-      </tr>
+      <tr><td><i data-lucide="badge-check"></i></td><td><a href="https://solucoes.receita.fazenda.gov.br/servicos/certidaointernet/pj/emitir" target="_blank">Certidão Negativa Receita Federal</a></td><td></td><td><i data-lucide="shield-check"></i></td><td><a href="https://consulta-crf.caixa.gov.br/" target="_blank">Certidão CRF - Caixa</a></td></tr>
       <tr><td colspan="5" style="height: 20px;"></td></tr>
-      <tr>
-        <td><i data-lucide="alert-octagon"></i></td>
-        <td><a href="https://www10.fazenda.sp.gov.br/CertidaoNegativaDeb/Pages/EmissaoCertidaoNegativa.aspx" target="_blank">Certidão Negativa - Fazenda SP</a></td>
-        <td></td>
-        <td><i data-lucide="file-lock"></i></td>
-        <td><a href="https://cndt-certidao.tst.jus.br/inicio.faces" target="_blank">CNDT - Justiça do Trabalho</a></td>
-      </tr>
+      <tr><td><i data-lucide="alert-octagon"></i></td><td><a href="https://www10.fazenda.sp.gov.br/CertidaoNegativaDeb/Pages/EmissaoCertidaoNegativa.aspx" target="_blank">Certidão Negativa - Fazenda SP</a></td><td></td><td><i data-lucide="file-lock"></i></td><td><a href="https://cndt-certidao.tst.jus.br/inicio.faces" target="_blank">CNDT - Justiça do Trabalho</a></td></tr>
     </table>
   </section>
 
   <footer>
     <p>Rua Antonio Blanco, 599 - Vila Costa do Sol, São Carlos - SP, 13566-020</p>
     <p>
-      <span class="icon-link">
-        <i data-lucide="phone" class="icon-inline"></i>(16) 3411-1781
-      </span> |
-      <a href="http://wa.me/5516997619641" target="_blank" class="icon-link">
-        <i data-lucide="message-circle" class="icon-inline"></i>Whatsapp
-      </a> |
-      <a href="https://www.instagram.com/novaescritacontabilidade" target="_blank" class="icon-link">
-        <i data-lucide="instagram" class="icon-inline"></i>novaescritacontabilidade
-      </a> |
-      <a href="https://waze.com/ul?ll=-22.00242210%2C-47.88524790&navigate=yes" target="_blank" class="icon-link">
-        <i data-lucide="map-pin" class="icon-inline"></i>Waze
-      </a> |
-      <a href="https://www.google.com/maps?q=-22.00242210,-47.88524790" target="_blank" class="icon-link">
-        <i data-lucide="map-pin" class="icon-inline"></i>Google Maps
-      </a>
+      <span class="icon-link"><i data-lucide="phone" class="icon-inline"></i>(16) 3411-1781</span> |
+      <a href="http://wa.me/5516997619641" target="_blank" class="icon-link"><i data-lucide="message-circle" class="icon-inline"></i>Whatsapp</a> |
+      <a href="https://www.instagram.com/novaescritacontabilidade" target="_blank" class="icon-link"><i data-lucide="instagram" class="icon-inline"></i>Instagram</a> |
+      <a href="https://waze.com/ul?ll=-22.00242210%2C-47.88524790&navigate=yes" target="_blank" class="icon-link"><i data-lucide="map-pin" class="icon-inline"></i>Waze</a> |
+      <a href="https://www.google.com/maps?q=-22.00242210,-47.88524790" target="_blank" class="icon-link"><i data-lucide="map-pin" class="icon-inline"></i>Google Maps</a>
     </p>
   </footer>
 
   <script>
     function toggleMobileMenu() {
-      const menu = document.getElementById('mobile-menu');
-      const overlay = document.getElementById('mobile-overlay');
-      const icon = document.getElementById('menu-icon');
-      const isActive = menu.classList.toggle('active');
-      overlay.classList.toggle('active', isActive);
-      icon.setAttribute('data-lucide', isActive ? 'x' : 'menu');
+      const m = document.getElementById('mobile-menu');
+      const o = document.getElementById('mobile-overlay');
+      const i = document.getElementById('menu-icon');
+      const a = m.classList.toggle('active');
+      o.classList.toggle('active', a);
+      i.setAttribute('data-lucide', a ? 'x' : 'menu');
       lucide.createIcons();
     }
     lucide.createIcons();
