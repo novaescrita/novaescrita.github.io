@@ -1,147 +1,65 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Serviços - Nova Escrita Contabilidade</title>
   <script src="https://unpkg.com/lucide@latest"></script>
   <style>
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: #f8f9fa;
-      color: #333;
-    }
-    header {
-      background-color: white;
-      color: #002147;
-      padding: 10px 20px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      flex-wrap: nowrap;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    }
-    .logo img {
-      height: 50px;
-    }
-    nav {
-      display: flex;
-      gap: 15px;
-      flex-direction: row;
-      align-items: center;
-    }
-    nav a {
-      color: #002147;
-      text-decoration: none;
-      font-weight: 500;
-    }
-    .menu-toggle {
-      display: none;
-      cursor: pointer;
-    }
-    .menu-toggle svg {
-      color: #002147;
-      width: 28px;
-      height: 28px;
-    }
-    .hero {
-      background: linear-gradient(135deg, #002147, #003366);
-      color: white;
-      padding: 60px 20px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 30px;
-      flex-wrap: wrap;
-    }
-    .hero-text {
-      text-align: center;
-      max-width: 600px;
-    }
-    .hero-text h1 {
-      font-size: 32px;
-      margin-bottom: 10px;
-    }
-    .hero-text p {
-      font-size: 18px;
-    }
-    .about {
-      padding: 40px 20px;
-      text-align: center;
-    }
-    .about h2 {
-      color: #002147;
-      font-size: 28px;
-    }
-    .about ul {
-      list-style: none;
-      padding: 0;
-      max-width: 600px;
-      margin: 30px auto;
-      text-align: left;
-    }
-    .about li {
-      margin-bottom: 16px;
-      display: flex;
-      align-items: center;
-    }
-    .about li i {
-      margin-right: 14px;
-      color: #002147;
-      position: relative;
-      top: 1px;
-    }
-    footer {
-      background-color: #002147;
-      color: white;
-      padding: 20px;
-      font-size: 14px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      flex-direction: column;
-    }
+    body { margin: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #f8f9fa; color: #333; }
+    header, footer { background: #002147; color: white; padding: 20px; text-align: center; }
+    header { background: white; color: #002147; display: flex; align-items: center; justify-content: space-between; box-shadow: 0 2px 4px rgba(0,0,0,0.1); position: relative; z-index: 10; }
+    .logo img { height: 50px; }
+    nav.desktop-menu, .mobile-menu a { display: flex; gap: 15px; align-items: center; text-transform: uppercase; }
+    nav.desktop-menu a, .mobile-menu a { color: #002147; text-decoration: none; font-weight: 500; padding: 6px 12px; display: inline-flex; align-items: center; justify-content: center; transition: 0.3s; }
+    nav.desktop-menu a:hover { background: #002147; color: white; }
+    .menu-toggle { display: none; width: 36px; height: 36px; align-items: center; justify-content: center; position: absolute; right: 20px; z-index: 11; border: 1px solid #ccc; border-radius: 6px; background: #fff; cursor: pointer; }
+    .mobile-overlay { display: none; position: fixed; inset: 0; backdrop-filter: blur(6px); background: rgba(0,0,0,0.3); z-index: 4; }
+    .mobile-overlay.active { display: block; }
+    .mobile-menu { display: none; flex-direction: column; position: fixed; bottom: 0; left: 0; width: 100%; background: #002147; padding: 20px; text-align: center; transform: translateY(100%); transition: transform 0.8s ease; border-radius: 16px 16px 0 0; z-index: 5; }
+    .mobile-menu a { color: white !important; font-size: 18px; padding: 10px 0; }
+    .mobile-menu.active { display: flex; transform: translateY(0); }
+    .hero { background: linear-gradient(135deg, #002147, #003366); color: white; padding: 60px 20px; text-align: center; }
+    .hero h1 { font-size: 32px; margin-bottom: 10px; }
+    .hero p { font-size: 18px; }
+    .about { padding: 40px 20px; text-align: center; }
+    .about h2 { color: #002147; font-size: 28px; }
+    .about ul { list-style: none; padding: 0; max-width: 600px; margin: 30px auto; text-align: left; }
+    .about li { margin-bottom: 16px; display: flex; align-items: center; color: #002147; }
+    .about li i { margin-right: 14px; position: relative; top: 1px; color: #002147; }
+    .icon-inline { margin: 0 5px 0 10px; position: relative; top: 2px; }
+    .icon-link { color: white; text-decoration: none; display: inline-flex; align-items: baseline; }
+    footer p { margin: 5px 0; }
     @media (max-width: 768px) {
-      nav {
-        display: none;
-        flex-direction: column;
-        width: 100%;
-        background-color: white;
-        margin-top: 10px;
-        padding: 10px 0;
-      }
-      nav.active {
-        display: flex;
-      }
-      .menu-toggle {
-        display: block;
-        margin-left: auto;
-      }
-      header {
-        flex-direction: row;
-        align-items: center;
-        justify-content: space-between;
-      }
+      nav.desktop-menu { display: none; }
+      .menu-toggle { display: flex; }
+    }
+    @media (min-width: 769px) {
+      .menu-toggle, .mobile-menu, .mobile-overlay { display: none !important; }
     }
   </style>
 </head>
 <body>
+  <div id="mobile-overlay" class="mobile-overlay" onclick="toggleMobileMenu()"></div>
   <header>
-    <div class="logo">
-      <img src="logo.png" alt="Nova Escrita Contabilidade">
-    </div>
-    <div class="menu-toggle" onclick="toggleMenu()">
-      <i data-lucide="menu" id="menu-icon"></i>
-    </div>
-    <nav id="menu">
-      <a href="index.html">Início</a>
-      <a href="servicos.html">Serviços</a>
-      <a href="links.html">Links Úteis</a>
-      <a href="contato.html">Contato</a>
+    <div class="logo"><img src="logo.png" alt="Nova Escrita Contabilidade" /></div>
+    <nav class="desktop-menu">
+      <a href="index.html"><i data-lucide="home" class="icon-inline"></i> HOME</a>
+      <a href="servicos.html"><i data-lucide="briefcase" class="icon-inline"></i> SERVIÇOS</a>
+      <a href="links.html"><i data-lucide="link" class="icon-inline"></i> LINKS ÚTEIS</a>
+      <a href="contato.html"><i data-lucide="mail" class="icon-inline"></i> CONTATO</a>
     </nav>
+    <button class="menu-toggle" onclick="toggleMobileMenu()" aria-label="Abrir menu">
+      <i id="menu-icon" data-lucide="menu"></i>
+    </button>
   </header>
+
+  <div id="mobile-menu" class="mobile-menu">
+    <a href="index.html"><i data-lucide="home"></i> HOME</a>
+    <a href="servicos.html"><i data-lucide="briefcase"></i> SERVIÇOS</a>
+    <a href="links.html"><i data-lucide="link"></i> LINKS ÚTEIS</a>
+    <a href="contato.html"><i data-lucide="mail"></i> CONTATO</a>
+  </div>
 
   <section class="hero">
     <div class="hero-text">
@@ -153,57 +71,38 @@
   <section class="about">
     <h2>Serviços Especializados</h2>
     <ul>
-      <li><i data-lucide="check-circle" style="margin-right: 10px;"></i>Auditoria Contábil</li>
-      <li><i data-lucide="check-circle" style="margin-right: 10px;"></i>Assessoria Fiscal</li>
-      <li><i data-lucide="check-circle" style="margin-right: 10px;"></i>Assessoria Contábil</li>
-      <li><i data-lucide="check-circle" style="margin-right: 10px;"></i>Constituição, Registro e Encerramento de empresa</li>
-      <li><i data-lucide="check-circle" style="margin-right: 10px;"></i>Departamento Pessoal (Empresa e Doméstica)</li>
-      <li><i data-lucide="check-circle" style="margin-right: 10px;"></i>Regularização de Débitos (Pessoa Jurídica e Física)</li>
-      <li><i data-lucide="check-circle" style="margin-right: 10px;"></i>Regularização de Obras (CNO, SERO e CND)</li>
-      <li><i data-lucide="check-circle" style="margin-right: 10px;"></i>BPO Financeiro</li>
+      <li><i data-lucide="check-circle"></i>Auditoria Contábil</li>
+      <li><i data-lucide="check-circle"></i>Assessoria Fiscal</li>
+      <li><i data-lucide="check-circle"></i>Assessoria Contábil</li>
+      <li><i data-lucide="check-circle"></i>Constituição, Registro e Encerramento de empresa</li>
+      <li><i data-lucide="check-circle"></i>Departamento Pessoal (Empresa e Doméstica)</li>
+      <li><i data-lucide="check-circle"></i>Regularização de Débitos (Pessoa Jurídica e Física)</li>
+      <li><i data-lucide="check-circle"></i>Regularização de Obras (CNO, SERO e CND)</li>
+      <li><i data-lucide="check-circle"></i>BPO Financeiro</li>
     </ul>
   </section>
 
   <footer>
     <p>Rua Antonio Blanco, 599 - Vila Costa do Sol, São Carlos - SP, 13566-020</p>
     <p>
-      <span style="color: white; display: inline-flex; align-items: baseline;">
-        <i data-lucide="phone" style="margin: 0 5px 0 0; position: relative; top: 2px;"></i>(16) 3411-1781
-      </span> |
-      <a href="http://wa.me/5516997619641" target="_blank" style="color: white; text-decoration: none; display: inline-flex; align-items: baseline;">
-        <i data-lucide="message-circle" style="margin: 0 5px 0 10px; position: relative; top: 2px;"></i>Whatsapp
-      </a> |
-      <a href="https://www.instagram.com/novaescritacontabilidade" target="_blank" style="color: white; text-decoration: none; display: inline-flex; align-items: baseline;">
-        <i data-lucide="instagram" style="margin: 0 5px 0 10px; position: relative; top: 2px;"></i>novaescritacontabilidade
-      </a> |
-      <a href="https://waze.com/ul?ll=-22.00242210%2C-47.88524790&navigate=yes" target="_blank" style="color: white; text-decoration: none; display: inline-flex; align-items: baseline;">
-        <i data-lucide="map-pin" style="margin: 0 5px 0 10px; position: relative; top: 2px;"></i>Waze
-      </a> |
-      <a href="https://www.google.com/maps?q=-22.00242210,-47.88524790" target="_blank" style="color: white; text-decoration: none; display: inline-flex; align-items: baseline;">
-        <i data-lucide="map-pin" style="margin: 0 5px 0 10px; position: relative; top: 2px;"></i>Google Maps
-      </a>
+      <span class="icon-link"><i data-lucide="phone" class="icon-inline"></i>(16) 3411-1781</span> |
+      <a href="http://wa.me/5516997619641" target="_blank" class="icon-link"><i data-lucide="message-circle" class="icon-inline"></i>Whatsapp</a> |
+      <a href="https://www.instagram.com/novaescritacontabilidade" target="_blank" class="icon-link"><i data-lucide="instagram" class="icon-inline"></i>Instagram</a> |
+      <a href="https://waze.com/ul?ll=-22.00242210%2C-47.88524790&navigate=yes" target="_blank" class="icon-link"><i data-lucide="map-pin" class="icon-inline"></i>Waze</a> |
+      <a href="https://www.google.com/maps?q=-22.00242210,-47.88524790" target="_blank" class="icon-link"><i data-lucide="map-pin" class="icon-inline"></i>Google Maps</a>
     </p>
   </footer>
 
   <script>
-    function toggleMenu() {
-      const menu = document.getElementById('menu');
-      const icon = document.getElementById('menu-icon');
-      menu.classList.toggle('active');
-      icon.setAttribute('data-lucide', menu.classList.contains('active') ? 'x' : 'menu');
+    function toggleMobileMenu() {
+      const m = document.getElementById('mobile-menu');
+      const o = document.getElementById('mobile-overlay');
+      const i = document.getElementById('menu-icon');
+      const a = m.classList.toggle('active');
+      o.classList.toggle('active', a);
+      i.setAttribute('data-lucide', a ? 'x' : 'menu');
       lucide.createIcons();
     }
-    document.addEventListener('click', function (event) {
-      const menu = document.getElementById('menu');
-      const toggle = document.querySelector('.menu-toggle');
-      const icon = document.getElementById('menu-icon');
-      const isMobile = window.innerWidth <= 768;
-      if (isMobile && !menu.contains(event.target) && !toggle.contains(event.target)) {
-        menu.classList.remove('active');
-        icon.setAttribute('data-lucide', 'menu');
-        lucide.createIcons();
-      }
-    });
     lucide.createIcons();
   </script>
 </body>
