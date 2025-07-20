@@ -38,6 +38,15 @@
       color: #002147;
       text-decoration: none;
       font-weight: 500;
+      text-transform: uppercase;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      padding: 6px 12px;
+      transition: background-color 0.3s, color 0.3s;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
     }
     .menu-toggle {
       cursor: pointer;
@@ -164,10 +173,17 @@
       }
     }
     @media (min-width: 769px) {
+      .menu-toggle {
+        display: none !important;
+      }
       .mobile-menu,
       .mobile-overlay {
         display: none !important;
       }
+    }
+  nav.desktop-menu a:hover {
+      background-color: #002147;
+      color: white;
     }
   </style>
 </head>
@@ -178,10 +194,10 @@
       <img src="logo.png" alt="Nova Escrita Contabilidade">
     </div>
     <nav class="desktop-menu">
-      <a href="index.html">Início</a>
-      <a href="servicos.html">Serviços</a>
-      <a href="links.html">Links Úteis</a>
-      <a href="contato.html">Contato</a>
+      <a href="index.html"><i data-lucide="home" class="icon-inline"></i> HOME</a>
+      <a href="servicos.html"><i data-lucide="briefcase" class="icon-inline"></i> SERVIÇOS</a>
+      <a href="links.html"><i data-lucide="link" class="icon-inline"></i> LINKS ÚTEIS</a>
+      <a href="contato.html"><i data-lucide="mail" class="icon-inline"></i> CONTATO</a>
     </nav>
     <button class="menu-toggle" onclick="toggleMobileMenu()" aria-label="Abrir menu">
       <i id="menu-icon" data-lucide="menu"></i>
@@ -189,10 +205,10 @@
   </header>
 
   <div id="mobile-menu" class="mobile-menu">
-    <a href="index.html">Início</a>
-    <a href="servicos.html">Serviços</a>
-    <a href="links.html">Links Úteis</a>
-    <a href="contato.html">Contato</a>
+    <a href="index.html"><i data-lucide="home" class="icon-inline"></i> HOME</a>
+    <a href="servicos.html"><i data-lucide="briefcase" class="icon-inline"></i> SERVIÇOS</a>
+    <a href="links.html"><i data-lucide="link" class="icon-inline"></i> LINKS ÚTEIS</a>
+    <a href="contato.html"><i data-lucide="mail" class="icon-inline"></i> CONTATO</a>
   </div>
 
   <section class="hero">
