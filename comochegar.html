@@ -15,52 +15,77 @@
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      height: 100vh;
+      min-height: 100vh;
       text-align: center;
     }
     .container {
       background: white;
-      padding: 50px 30px;
+      padding: 40px 20px;
       border-radius: 12px;
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-      max-width: 90%;
+      width: 100%;
+      max-width: 500px;
+      box-sizing: border-box;
+    }
+    .logo {
+      max-width: 180px;
+      width: 100%;
+      margin-bottom: 25px;
     }
     h1 {
-      margin-bottom: 30px;
-      font-size: 24px;
+      margin-bottom: 25px;
+      font-size: 22px;
     }
     .button {
       display: inline-flex;
       align-items: center;
       justify-content: center;
       gap: 10px;
-      min-width: 200px;
-      padding: 15px 30px;
-      margin: 15px auto;
+      width: 100%;
+      max-width: 320px;
+      padding: 14px;
+      margin: 10px auto;
       border: none;
       border-radius: 8px;
-      font-size: 18px;
+      font-size: 16px;
       cursor: pointer;
       text-decoration: none;
       color: white;
-      background-color: #4CAF50;
       transition: background-color 0.3s;
     }
     .button:hover {
-      background-color: #45a049;
+      filter: brightness(0.9);
+    }
+    .button.primary {
+      background-color: #4CAF50;
     }
     .button.secondary {
       background-color: #4285F4;
     }
-    .button.secondary:hover {
-      background-color: #3367d6;
+    .address {
+      margin-top: 25px;
+      font-size: 15px;
+      color: #333;
+    }
+    @media (min-width: 600px) {
+      h1 {
+        font-size: 24px;
+      }
+      .button {
+        font-size: 18px;
+        padding: 15px 30px;
+      }
+      .logo {
+        max-width: 220px;
+      }
     }
   </style>
 </head>
 <body>
   <div class="container">
+    <img class="logo" src="/Logo Azul Full.png" alt="Nova Escrita Contabilidade" />
     <h1>Como chegar</h1>
-    <a class="button" href="https://waze.com/ul?ll=-22.00242210%2C-47.88524790&navigate=yes" target="_blank">
+    <a class="button primary" href="https://waze.com/ul?ll=-22.00242210%2C-47.88524790&navigate=yes" target="_blank">
       <i data-lucide="map-pin"></i>
       Abrir no Waze
     </a>
@@ -68,6 +93,9 @@
       <i data-lucide="map-pin"></i>
       Abrir no Google Maps
     </a>
+    <div class="address">
+      Rua Antonio Blanco, 599 - Vila Costa do Sol, São Carlos - SP, 13566-020
+    </div>
   </div>
 
   <script>
