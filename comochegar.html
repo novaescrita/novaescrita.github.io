@@ -1,14 +1,13 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head>
-  <meta charset="UTF-8" />
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+<meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Como Chegar</title>
   <script src="https://unpkg.com/lucide@latest"></script>
   <style>
     body {
-      font-family: Arial, sans-serif;
-      background: #f2f2f2;
+      font-family: 'Roboto', sans-serif;background: white;
       margin: 0;
       padding: 0;
       display: flex;
@@ -19,7 +18,8 @@
       text-align: center;
     }
     .container {
-      background: white;
+      background: #002147;
+      color: white;
       padding: 40px 20px;
       border-radius: 12px;
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
@@ -65,7 +65,7 @@
     .address {
       margin-top: 25px;
       font-size: 15px;
-      color: #333;
+      color: white;
     }
     @media (min-width: 600px) {
       h1 {
@@ -84,15 +84,17 @@
 <body>
   <div class="container">
     <img class="logo" src="/Logo Azul Full.png" alt="Nova Escrita Contabilidade" />
-    <h1>Como chegar</h1>
-    <a class="button primary" href="https://waze.com/ul?ll=-22.00242210%2C-47.88524790&navigate=yes" target="_blank">
-      <i data-lucide="map-pin"></i>
-      Abrir no Waze
-    </a>
-    <a class="button secondary" href="https://www.google.com/maps?q=-22.00242210,-47.88524790" target="_blank">
-      <i data-lucide="map-pin"></i>
-      Abrir no Google Maps
-    </a>
+<br>
+    <div style="margin: 20px 0;">
+      <a href="https://waze.com/ul?ll=-22.00242210%2C-47.88524790&navigate=yes" target="_blank">
+        <img src="/Waze.png" alt="Waze" style="max-width: 300px; width: 100%; border-radius: 12px;" />
+      </a>
+    </div>
+    <div style="margin: 20px 0;">
+      <a href="https://www.google.com/maps?q=-22.00242210,-47.88524790" target="_blank">
+        <img src="/GoogleMaps.png" alt="Google Maps" style="max-width: 300px; width: 100%; border-radius: 12px;" />
+      </a>
+    </div>
     <div class="address">
       Rua Antonio Blanco, 599 - Vila Costa do Sol, São Carlos - SP, 13566-020
     </div>
