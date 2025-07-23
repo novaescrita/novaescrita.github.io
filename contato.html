@@ -23,11 +23,12 @@
     .hero h1 { font-size: 32px; margin-bottom: 10px; }
     .hero p { font-size: 18px; }
     .about { padding: 40px 20px; text-align: center; }
-    .about h2 { color: #002147; font-size: 28px; }
-    .about td { padding: 10px; text-align: left; color: #002147; }
-    .about i { position: relative; top: 2px; margin-right: 10px; color: #002147; }
-    .about a { color: #002147; text-decoration: none; font-weight: 500; }
-    .about a:visited, .about a:link, .about a:active, .about a:hover { color: #002147; text-decoration: none; }
+    .about h2 { color: #0047AB; font-size: 22px; margin-bottom: 15px; }
+    .about .section-box { border: 1px solid #999; padding: 20px; margin-bottom: 30px; }
+    .about td { padding: 10px; text-align: center; color: #002147; vertical-align: middle; border: none; background: transparent; }
+    .about i { margin-right: 6px; color: #002147; }
+    .about a { color: #002147; text-decoration: none; font-weight: 500; display: inline-flex; align-items: center; justify-content: center; gap: 6px; }
+    .about a:hover { text-decoration: underline; }
     .icon-inline { margin: 0 5px 0 10px; position: relative; top: 2px; }
     .icon-link { color: white !important; text-decoration: none !important; display: inline-flex; align-items: baseline; }
     .icon-link:visited, .icon-link:link, .icon-link:active, .icon-link:hover, .icon-link:focus { color: white !important; text-decoration: none !important; }
@@ -72,14 +73,45 @@
   </section>
 
   <section class="about">
-    <h2>Entre em Contato</h2>
-    <table style="margin: 0 auto; border-collapse: collapse;">
-      <tr><td><i data-lucide="phone"></i></td><td><a href="tel:+551634111781">(16) 3411-1781</a></td></tr>
-      <tr><td><i data-lucide="message-circle"></i></td><td><a href="http://wa.me/551634111781" target="_blank">Whatsapp</a></td></tr>
-      <tr><td><i data-lucide="instagram"></i></td><td><a href="https://www.instagram.com/novaescritacontabilidade" target="_blank">Instagram</a></td></tr>
-      <tr><td><i data-lucide="map-pin"></i></td><td><a href="https://waze.com/ul?ll=-22.00242210%2C-47.88524790&navigate=yes" target="_blank">Waze</a></td></tr>
-      <tr><td><i data-lucide="map-pin"></i></td><td><a href="https://www.google.com/maps?q=-22.00242210,-47.88524790" target="_blank">Google Maps</a></td></tr>
-    </table>
+    <div class="section-box">
+      <h2>Contato</h2>
+      <table style="margin: 0 auto; border-collapse: separate; border-spacing: 20px;">
+        <tr>
+          <td><a href="tel:+551634111781"><i data-lucide="phone"></i>(16) 3411-1781</a></td>
+          <td><a href="http://wa.me/551634111781" target="_blank"><i data-lucide="message-circle"></i>Whatsapp</a></td>
+          <td><a href="https://www.instagram.com/novaescritacontabilidade" target="_blank"><i data-lucide="instagram"></i>Instagram</a></td>
+        </tr>
+      </table>
+    </div>
+
+    <div class="section-box">
+      <h2>Horário de Atendimento</h2>
+      <table style="margin: 0 auto; border-collapse: collapse; width: 100%; max-width: 600px;">
+        
+        <tr>
+          <td colspan="2" style="text-align: center; font-weight: bold; padding: 8px; color: #002147;">De Segunda à Sexta:</td>
+        </tr>
+        <tr>
+          <td colspan="2" style="text-align: center; padding: 6px;">08:30 - 12:00 e das 13:30 - 17:30</td>
+        </tr>
+        <tr>
+          <td colspan="2" style="text-align: center; font-weight: bold; padding: 8px; color: #002147;">Sábado e domingo</td>
+        </tr>
+        <tr>
+          <td colspan="2" style="text-align: center; padding: 6px;">Fechado</td>
+        </tr>
+      </table>
+    </div>
+
+    <div class="section-box">
+      <h2>Como chegar</h2>
+      <table style="margin: 0 auto; border-collapse: separate; border-spacing: 20px;">
+        <tr>
+          <td><a href="https://waze.com/ul?ll=-22.00242210%2C-47.88524790&navigate=yes" target="_blank"><i data-lucide="map-pin"></i>Waze</a></td>
+          <td><a href="https://www.google.com/maps?q=-22.00242210,-47.88524790" target="_blank"><i data-lucide="map-pin"></i>Google Maps</a></td>
+        </tr>
+      </table>
+    </div>
   </section>
 
   <footer>
