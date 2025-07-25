@@ -1,0 +1,13 @@
+# robots.txt para Nova Escrita Contabilidade
+# Permite indexação completa e informa o sitemap
+
+User-agent: *
+Disallow:
+
+# (Desbloqueia tudo – o site é público e deve ser indexado)
+# Seções privadas podem ser adicionadas assim:
+# Disallow: /admin/
+# Disallow: /tmp/
+
+# Sitemap XML para auxiliar os mecanismos de busca
+Sitemap: https://www.novaescritacontabilidade.com.br/sitemap.xml
